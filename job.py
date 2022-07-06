@@ -3,8 +3,10 @@ from requests_html import HTMLSession
 import requests
 import pandas as pd
 
+
 mina_yrken = ["lager", "truckförare", "lagerarbetare", "data", "it-tekniker", "truck"]
 skit_arbetsgivare = ["tranpenad", "dhl"]
+blocked_title_text = ["åsbro"]
 max_antal_sidor = 2
 
 
@@ -34,7 +36,7 @@ def extract(pagenumber):
 def transform(r):
     job_card = r.html.find("pb-feature-search-result-card")
     for item in job_card:
-      if any(yrke in item.find("div")[5].text.lower() for yrke in mina_yrken):
+      if any(yrke in item.find("div")[5].text.lower() for yrke in mina_yrken) and not any(arbetsgivare in item.find("strong")[0].text.lower() for arbetsgivare in skit_arbetsgivare):
         jobb = item.find("a")[0].text
         y = item.find("div")[5].text
         company = item.find("strong")[0].text
@@ -54,7 +56,7 @@ def transform(r):
 joblist = []
 
 # Över 25 laggar. error at 43 pyppeteer.errors.TimeoutError: Navigation Timeout Exceeded: 8000 ms exceeded..
-for i in range(0, 10):
+for i in range(0, 5):
     print(f"Getting page, {i}")
     c = extract(i)
     transform(c)
