@@ -47,7 +47,8 @@ def transform(r):
             "yrke": y,
             "company": company,
             "tid": tid,
-            "link": link
+            "link": link,
+            "applied": False
         }
         joblist.append(job)
     return
@@ -63,7 +64,6 @@ for i in range(0, 5):
 
 
 df = pd.DataFrame(joblist)
-print(df.head())
 df.to_csv("jobs.csv")
 
 

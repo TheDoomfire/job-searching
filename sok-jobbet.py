@@ -40,8 +40,9 @@ def get_jobs():
 
        for row in reader:
          #Gets all jobs fom next_month
-         if next_month in row["tid"]:
+         #if next_month in row["tid"]:
            print(row["link"])
 
 
 get_jobs()
+
