@@ -3,6 +3,9 @@ import datetime
 import patoolib
 import os
 
+
+# This program is to download all the job
+
 # TODO
 # Download https://data.jobtechdev.se/annonser/jobtechlinks/2022-07-31.tar.gz - DONE
 # Access the json file
@@ -18,13 +21,14 @@ downloadUrl = f"https://data.jobtechdev.se/annonser/jobtechlinks/{fileName}"
 req = requests.get(downloadUrl) # Downloads it.
 
 
-""" with open(fileName, "wb") as f:
+with open(fileName, "wb") as f:
     for chunk in req.iter_content(chunk_size=8192): # Download it in chunks if its too big.
         if chunk:
             f.write(chunk)
 
 
-def download_file(url, filename=""):
+# Tried making it a function.
+""" def download_file(url, filename=""):
     try:
         if filename: # If filename is not blank
             pass
