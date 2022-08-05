@@ -2,7 +2,7 @@ import json
 
 
 theFile = "output.json" # File Location for the Json file.
-jobsIwant = ["data", "programerare", "truckförare", "lagerarbetare", ]
+jobsIwant = ["data", "programerare", "it-strateg", "systemutvecklare", "data engineer", "data analyst", "truckförare", "lagerarbetare", ]
 whereIwantJob = "örebro"
 ignoreEmployers = ["dhl", "tranpenad"]
 
@@ -19,6 +19,7 @@ myNumber = 0
 for myNumber in range(len(data)):
     try:
         jobLocation = data[myNumber]["originalJobPosting"]["jobLocation"]["addressLocality"] # City adress
+        jobTitle = data[myNumber]["originalJobPosting"]["title"]
         JobOccupation = data[myNumber]["originalJobPosting"]["relevantOccupation"]["name"] # Job title
         hiringOrganizationName = data[myNumber]["originalJobPosting"]["hiringOrganization"]["name"] # Name of the Hirining Company
         jobLink = data[myNumber]["original_source_links"][0]["link"] # For the job ad
@@ -30,6 +31,7 @@ for myNumber in range(len(data)):
                     print(JobOccupation)
                     print(hiringOrganizationName)
                     print(jobLink)
+                    print(jobTitle)
                     print(myNumber)
                     # if hiringOrganizationName.casefold() in ignoreEmployers.casefold():
                     # any(work_title in JobOccupation.casefold() for work_title in jobsIwant.casefold())
