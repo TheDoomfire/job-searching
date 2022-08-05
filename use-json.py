@@ -12,7 +12,7 @@ data = [json.loads(line) for line in open(theFile,'r', encoding="utf8")]
 
 
 # TODO
-# add all jobs in a json file if not already in there. Sort by month.
+# add all jobs in a json file if not already in there. Sort by month?
 # Combine this and download-json.py so it downloads it and then open up the file and running this program.
 
 myNumber = 0
