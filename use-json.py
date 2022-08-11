@@ -5,7 +5,7 @@ import datetime
 
 todayDate = datetime.datetime.now().date() # Todays date
 
-
+# Edit here if you want. Write in lowercase.
 theFile = "output.json" # File Location for the Json file.
 jobsIwant = ["data", "programerare", "it-strateg", "systemutvecklare", "data engineer", "data analyst", "truckförare", "lagerarbetare", ]
 whereIwantJob = "örebro"
@@ -15,10 +15,6 @@ ignoreEmployers = ["dhl", "tranpenad"]
 # Load every line into data. So data = jsonFile
 data = [json.loads(line) for line in open(theFile,'r', encoding="utf8")]
 
-
-# TODO
-# add all jobs in a json file if not already in there. Sort by month?
-# Combine this and download-json.py so it downloads it and then open up the file and running this program.
 
 joblist = []
 myNumber = 0
@@ -59,11 +55,5 @@ for myNumber in range(len(data)):
     # if name in "hiringOrganization" error. ??
 
 # Add to a CSV file.
-""" df = pd.DataFrame(joblist)
-df.to_csv("job-to-apply.csv") """
-
-# Working perfect.
-""" if jobLocation.casefold() == "örebro": # .casefold is like .lower but apperently better.
-    test = True
-else:
-    test = False """
+df = pd.DataFrame(joblist)
+df.to_csv("job-to-apply.csv")
