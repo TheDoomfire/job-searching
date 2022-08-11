@@ -13,6 +13,8 @@ För att söka jobb i arbetsförmedlingens hemsida
 1. Försök auto söka jobben.
 1. Spara jobben jag sökt i en fil.
 
+Download and unzips the json file. Then reads from it and save all jobs I may want in a csv file. Read from CSV file and go to webpages and apply for the jobs.
+
 
 
 
