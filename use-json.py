@@ -6,7 +6,7 @@ import datetime
 todayDate = datetime.datetime.now().date() # Todays date
 
 # Edit here if you want. Write in lowercase.
-theFile = "output.json" # File Location for the Json file.
+theFile = r"unpack\jobtechdev\minio\arkiv\output.json" # File Location for the Json file.
 jobsIwant = ["data", "programerare", "it-strateg", "systemutvecklare", "data engineer", "data analyst", "truckförare", "lagerarbetare", ]
 whereIwantJob = "örebro"
 ignoreEmployers = ["dhl", "tranpenad"]

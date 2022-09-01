@@ -21,6 +21,7 @@ downloadUrl = f"https://data.jobtechdev.se/annonser/jobtechlinks/{fileName}"
 req = requests.get(downloadUrl) # Downloads it.
 
 
+# Downloads it.
 with open(fileName, "wb") as f:
     for chunk in req.iter_content(chunk_size=8192): # Download it in chunks if its too big.
         if chunk:
@@ -48,4 +49,4 @@ with open(fileName, "wb") as f:
 
 os.getcwd() # Sets the path to the current working folder. Otherwise from C://
 
-patoolib.extract_archive(fileName, outdir="unpack") # Unzips it to the folder.
+patoolib.extract_archive(fileName, outdir="unpack") # Unzips it to the folder = outdir, it HAS to exist.

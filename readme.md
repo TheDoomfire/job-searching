@@ -15,7 +15,9 @@ För att söka jobb i arbetsförmedlingens hemsida
 
 Download and unzips the json file. Then reads from it and save all jobs I may want in a csv file. Read from CSV file and go to webpages and apply for the jobs.
 
+## Install Eveything
 
+pip install -r requirements.txt
 
 
 ## Fixa dessa

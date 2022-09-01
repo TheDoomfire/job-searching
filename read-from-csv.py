@@ -13,3 +13,7 @@ with open("job-to-apply.csv") as f:
         if count > 6:
             break
         count += 1
+
+
+webbrowser.open("https://chooseinvesting.com/")
+print("Done.")
