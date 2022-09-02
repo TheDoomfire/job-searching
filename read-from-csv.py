@@ -15,5 +15,7 @@ with open("job-to-apply.csv") as f:
         count += 1
 
 
-webbrowser.open("https://chooseinvesting.com/")
+webbrowser.open("https://chooseinvesting.com/", new=0, autoraise=True)
+
+
 print("Done.")
