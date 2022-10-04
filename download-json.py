@@ -9,6 +9,7 @@ import os
 # TODO
 # Download https://data.jobtechdev.se/annonser/jobtechlinks/2022-07-31.tar.gz - DONE
 # Access the json file
+# Make it able to download download the next next days if it dosent exist.
 
 # Get Help
 # helpMe = help(datetime.date)
@@ -47,6 +48,6 @@ with open(fileName, "wb") as f:
         return None """
 
 
-os.getcwd() # Sets the path to the current working folder. Otherwise from C://
+# os.getcwd() # Sets the path to the current working folder. Otherwise from C://
 
-patoolib.extract_archive(fileName, outdir="unpack") # Unzips it to the folder = outdir, it HAS to exist.
+# patoolib.extract_archive(fileName, outdir="unpack") # Unzips it to the folder = outdir, it HAS to exist.
