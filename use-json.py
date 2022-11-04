@@ -31,6 +31,7 @@ for myNumber in range(len(data)):
         hiringOrganizationName = data[myNumber]["originalJobPosting"]["hiringOrganization"]["name"] # Name of the Hirining Company
         jobLink = data[myNumber]["original_source_links"][0]["link"] # For the job ad
         jobValid = data[myNumber]["originalJobPosting"]["validThrough"] # when it expires
+        jobDatePosted = data[myNumber]["originalJobPosting"]["datePosted"]
         firstTime = False
 
         if jobLocation.casefold() == whereIwantJob.casefold(): # .casefold is like .lower but apperently better.
@@ -49,7 +50,8 @@ for myNumber in range(len(data)):
                             job = {"occupation": JobOccupation, 
                             "organization": hiringOrganizationName, 
                             "title": jobTitle, 
-                            "link": jobLink}
+                            "link": jobLink,
+                            "datePosted": jobDatePosted}
                             joblist.append(job)
                             allEmployers.append(hiringOrganizationName)
                                 

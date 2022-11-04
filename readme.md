@@ -5,11 +5,16 @@ För att söka jobb i arbetsförmedlingens hemsida
 
 ## TODO
 
-1. Gå till URL för jobben.
-1. Försök auto söka jobben. (med selenium)
-1. Spara jobben jag sökt i en fil.
+1. Downloads the file. On the last months workday or where filesize is bigger.
+1. Read the json and take all needed info.
+1. Take the URL and html_request and webscrape for referens and link
+1. Save all this info to a csv file.
 
-Download and unzips the json file. Then reads from it and save all jobs I may want in a csv file. Read from CSV file and go to webpages and apply for the jobs.
+1. Opens up every URL
+
+1. Take all the jobs in the .CSV
+1. Opens up chromedriver (for selenium)
+1. And if I press a specific button then: auto-aktivitetsrapportera
 
 ## Install Eveything
 
