@@ -5,12 +5,8 @@ För att söka jobb i arbetsförmedlingens hemsida
 
 ## TODO
 
-1. Hitta json filen och ladda ner den - KLAR
-1. Filtera json filen bara för jobb som jag vill ha. Alltså te.x i Örebro, med lager/data/it.
-1. Spara alla jobben som jag vill ha i en fil.
-
 1. Gå till URL för jobben.
-1. Försök auto söka jobben.
+1. Försök auto söka jobben. (med selenium)
 1. Spara jobben jag sökt i en fil.
 
 Download and unzips the json file. Then reads from it and save all jobs I may want in a csv file. Read from CSV file and go to webpages and apply for the jobs.
@@ -18,6 +14,8 @@ Download and unzips the json file. Then reads from it and save all jobs I may wa
 ## Install Eveything
 
 pip install -r requirements.txt
+
+python -m pip install PACKAGENAME
 
 
 ## Fixa dessa
@@ -53,3 +51,14 @@ Get "url"
 Download link:
 
 {"originalJobPosting":{"@type":"JobPosting","totalJobOpenings":3,"relevantOccupation":{"occupationalCategory":{"codeValue":"heGV_uHh_o8W","@context":"http://schema.org/","@type":"CategoryCode"},"name":"Arbetsterapeut","@type":"Occupation","@context":"http://schema.org/"},"identifier":"26167569","scraper":"arbetsformedlingen.se","url":"https://arbetsformedlingen.se/platsbanken/annonser/26167569","hiringOrganization":{"@type":"Organization","url":"http://www.mabrahalsa.se","@context":"http://schema.org/","name":"Må Bra Hälsa i Danderyd AB","address":"MåBra Hälsa Hammarby Sjöstad"},"title":"  Arbetsterapeut konsult eller anställd  MåBra Hälsa AB Primärvård","employmentType":"Vanlig anställning","@context":"http://schema.org/","datePosted":"2022-06-02","validThrough":"2022-08-20","jobLocation":{"postalCode":"12030","@type":"PostalAddress","@context":"http://schema.org/","addressLocality":"Stockholm","streetAddress":"Virkesvägen 6"},"experienceRequirements":"Arbetsterapeut - Erfarenhet efterfrågas"},"id":"0657f38a4f87a21b3b3edb8e9a94497a","firstSeen":"2022-06-03T00:55:16","detected_language":"sv","application_deadline":"2022-08-20T23:59:59","text_enrichments_results":{"enriched_result":{"enriched_candidates":{"occupations":[{"concept_label":"Arbetsterapeut","term":"arbetsterapeut","term_misspelled":false,"prediction":0.630943656}],"competencies":[{"concept_label":"Hälsa","term":"hälsa","term_misspelled":false,"prediction":0.094073772},{"concept_label":"Primärvård","term":"primärvård","term_misspelled":false,"prediction":0.03616035},{"concept_label":"Sjukvård","term":"vård","term_misspelled":false,"prediction":0.053651631},{"concept_label":"Friskvård","term":"friskvård","term_misspelled":false,"prediction":0.137064934},{"concept_label":"Vision","term":"vision","term_misspelled":false,"prediction":0.027612805},{"concept_label":"Friskvård","term":"friskvård","term_misspelled":false,"prediction":0.006487906},{"concept_label":"Sjukvård","term":"vård","term_misspelled":false,"prediction":0.007484436},{"concept_label":"Sjukvård","term":"vård","term_misspelled":false,"prediction":0.428660154},{"concept_label":"Hälsa","term":"hälsa","term_misspelled":false,"prediction":0.443293929},{"concept_label":"Kost","term":"kost","term_misspelled":false,"prediction":0.339191318},{"concept_label":"Sjukvård","term":"vård","term_misspelled":false,"prediction":0.377475917},{"concept_label":"Ergonomi","term":"ergonomi","term_misspelled":false,"prediction":0.07197082},{"concept_label":"Hälsa","term":"hälsa","term_misspelled":false,"prediction":0.012584448},{"concept_label":"Arbetsterapi","term":"arbetsterapi","term_misspelled":false,"prediction":0.638242662},{"concept_label":"Tilläggsarbeten","term":"tilläggsarbete","term_misspelled":false,"prediction":0.19788456}],"traits":[{"concept_label":"Arbeta självständigt","term":"arbeta självständigt","term_misspelled":false,"prediction":0.805527449},{"concept_label":"Arbeta självständigt","term":"arbeta självständigt","term_misspelled":false,"prediction":0.106097162}],"geos":[{"concept_label":"Stockholm","term":"stockholm","term_misspelled":false,"prediction":0.0459084809},{"concept_label":"Danderyd","term":"danderyd","term_misspelled":false,"prediction":0.0450230837},{"concept_label":"Mörby centrum","term":"mörby centrum","term_misspelled":false,"prediction":0.015752852},{"concept_label":"Hammarby sjöstad","term":"hammarby sjöstad","term_misspelled":false,"prediction":0.0231672525},{"concept_label":"Nacka","term":"nacka","term_misspelled":false,"prediction":0.07786569},{"concept_label":"Nacka","term":"nacka","term_misspelled":false,"prediction":0.0188489556},{"concept_label":"Danderyd","term":"danderyd","term_misspelled":false,"prediction":0.0095978379}]}},"enrichedbinary_result":{"enriched_candidates":{"occupations":[{"concept_label":"Arbetsterapeut","term":"arbetsterapeut","term_misspelled":false}],"competencies":[{"concept_label":"Arbetsterapi","term":"arbetsterapi","term_misspelled":false}],"traits":[{"concept_label":"Arbeta självständigt","term":"arbeta självständigt","term_misspelled":false}],"geos":[]}}},"workplace_addresses":[],"ssyk_lvl4":2330,"hashsum":"AVlrGgAS8gQwAsOiA8KdBG01NABBTDtcK5AXTDiMOoADnChXc=AFF3wpw=+81275d86ff7f0d42cfe3b43731b6ccc2","sourceLinks":[{"displayName":"arbetsformedlingen.se","link":"https://arbetsformedlingen.se/platsbanken/annonser/26167569"}],"isValid":true,"brief_description":"VI SÖKER MEDARBETARE TILL SAMTLIGA MOTTAGNINGARVi är ett Hälsocentrum som bedrivit vård med vårdavtal och friskvård i snart 20 år. Idag finns vi på fyra ställen i Stockholm.","date_to_display_as_publish_date":"2022-06-02T00:00:00","original_source_links":[{"displayName":"arbetsformedlingen.se","link":"https://arbetsformedlingen.se/platsbanken/annonser/26167569"}]}
+
+
+
+/html/body/div[1]/div[2]/div[8]/div/div/main/div[3]/div/div/div[2]/div/div/div/div/div[2]/div[2]/pb-root/div/pb-page-job/div/section/div/div[2]/div[2]/aside[1]/div/pb-section-job-apply-component/div/div/div[2]
+
+//*[@id="pb-root"]/pb-page-job/div/section/div/div[2]/div[2]/aside[1]/div/pb-section-job-apply-component/div/div/div[2]
+
+
+/html/body/div[1]/div[2]/div[8]/div/div/main/div[3]/div/div/div[2]/div/div/div/div/div[2]/div[2]/pb-root/div/pb-page-job/div/section/div/div[2]/div[2]/aside[1]/div/pb-section-job-apply-component/div/div/div[2]/strong
+
+//*[@id="pb-root"]/pb-page-job/div/section/div/div[2]/div[2]/aside[1]/div/pb-section-job-apply-component/div/div/div[2]/strong
