@@ -51,6 +51,7 @@ def getReferens(link):
 
     for i in annonsLink.absolute_links: # Stupid I have to do this. Only one link inside.
         annonsLink = i
+    return annonsLink, referens # TODO: return referens if not none/null
 
     theJob = {
     "link": annonsLink,

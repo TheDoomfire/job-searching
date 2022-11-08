@@ -3,6 +3,6 @@ patool
 ijson
 requests_html
 BeautifulSoup4
-patoolib
 lxml
 selenium
+pandas

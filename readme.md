@@ -5,7 +5,6 @@ För att söka jobb i arbetsförmedlingens hemsida
 
 ## TODO
 
-1. Downloads the file. On the last months workday or where filesize is bigger.
 1. Read the json and take all needed info.
 1. Take the URL and html_request and webscrape for referens and link
 1. Save all this info to a csv file.
