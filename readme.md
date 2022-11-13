@@ -73,3 +73,46 @@ Download link:
 /html/body/div[1]/div[2]/div[8]/div/div/main/div[3]/div/div/div[2]/div/div/div/div/div[2]/div[2]/pb-root/div/pb-page-job/div/section/div/div[2]/div[2]/aside[1]/div/pb-section-job-apply-component/div/div/div[2]/strong
 
 //*[@id="pb-root"]/pb-page-job/div/section/div/div[2]/div[2]/aside[1]/div/pb-section-job-apply-component/div/div/div[2]/strong
+
+
+
+
+
+
+<button _ngcontent-elk-c12="" data-digi-ng-component="" class="digi-ng-button-base digi-ng-button-base--primary digi-ng-button-base--m" type="button" data-event-include="true"><div _ngcontent-elk-c19="" class="digi-ng-button-icon-text__content" data-event-include="true"><digi-ng-typography-icon-text _ngcontent-elk-c19="" _nghost-elk-c13="" data-event-include="true"><div _ngcontent-elk-c13="" data-digi-ng-component="" class="digi-ng-typography-icon-text digi-ng-typography-icon-text--relative-icon-size" data-event-include="true"><!----><div _ngcontent-elk-c13="" class="digi-ng-typography-icon-text__icon" data-event-include="true"><digi-ng-icon-plus _ngcontent-elk-c139="" _nghost-elk-c85="" data-event-include="true"><svg _ngcontent-elk-c85="" width="22" height="23" viewBox="0 0 22 23" xmlns="http://www.w3.org/2000/svg" data-digi-ng-component="" class="digi-ng-icon-plus" data-event-include="true"><!----><path _ngcontent-elk-c85="" d="M21.08 9.58h-8.25V1a.94.94 0 00-.91-1h-1.84a.94.94 0 00-.91 1v8.58H.92a.94.94 0 00-.92 1v1.92a.94.94 0 00.92 1h8.25V22a.94.94 0 00.91 1h1.84a.94.94 0 00.91-1v-8.58h8.25a.94.94 0 00.92-1v-1.88a.94.94 0 00-.92-.96z" fill="currentColor" class="digi-ng-icon-plus__shape" data-event-include="true"></path></svg></digi-ng-icon-plus></div><span _ngcontent-elk-c13="" class="digi-ng-typography-icon-text__text" data-event-include="true">Lägg till aktiviteter</span><!----></div></digi-ng-typography-icon-text></div></button>
+
+//*[@id="arw-container"]/ng-component/arw-full-page-block[2]/div/section/div/div/div[1]/div/div/div[2]/digi-ng-button-icon-text/digi-ng-button-base/button
+
+TEST:
+//button/div/digi-ng-typography-icon-text/div/div/digi-ng-icon-plus/svg/path[text()="Lägg till aktiviteter"]
+
+//button/div/digi-ng-typography-icon-text/div/div/digi-ng-icon-plus/svg/path[text()="Lägg till aktiviteter"]
+
+//*[@id="arw-container"]/ng-component/arw-full-page-block[2]/div/section/div/div/div[1]/div/div/div[2]/digi-ng-button-icon-text/digi-ng-button-base/button/div/digi-ng-typography-icon-text/div/span[text()="Lägg till aktiviteter"]
+
+
+
+
+At first login. Click this div/span
+<a _ngcontent-vgb-c32="" class="digi-ng-link-base ng-star-inserted" href="/for-arbetssokande/mina-sidor/aktivitetsrapportera"><div _ngcontent-vgb-c34="" class="digi-ng-link-button ng-star-inserted digi-ng-link-button--full-width"><span _ngcontent-vgb-c34="" class="digi-ng-link-button__text"> Aktivitetsrapportera </span><digi-ng-icon-arrow-right _ngcontent-vgb-c34="" class="digi-ng-link-button__icon" _nghost-vgb-c33=""><svg _ngcontent-vgb-c33="" width="9" height="14" viewBox="0 0 9 14" xmlns="http://www.w3.org/2000/svg" data-digi-ng-component="" class="digi-ng-icon-arrow-right"><!----><path _ngcontent-vgb-c33="" d="M1 13l6-6.074L1.147 1" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" class="digi-ng-icon-arrow-right__shape"></path></svg></digi-ng-icon-arrow-right></div><!----></a>
+
+
+//*[@id="svid12_2bef8e33170a57d956511636"]/asms-root/div/div[2]/div/div/div[2]/asms-start-page/div/div[2]/asms-apps/aside/div/div/div/asms-my-services/nav/ul/li[1]/digi-ng-link-button/digi-ng-link-base/a/div
+
+
+/html/body/div[1]/div[2]/div[8]/div/div/main/div[3]/div/div/div[2]/div/div/div/div/div[2]/div/div/div[1]/asms-root/div/div[2]/div/div/div[2]/asms-start-page/div/div[2]/asms-apps/aside/div/div/div/asms-my-services/nav/ul/li[1]/digi-ng-link-button/digi-ng-link-base/a/div
+
+
+
+
+<input _ngcontent-jny-c76="" type="radio" class="digi-ng-form-radiobutton__input" id="digi-ng-radiobutton-aek8x" value="soktjobb" required="true" name="typ">
+
+<digi-ng-form-radiobutton _ngcontent-bqq-c77="" _nghost-bqq-c76=""><div _ngcontent-bqq-c76="" data-digi-ng-component="" class="digi-ng-form-radiobutton"><input _ngcontent-bqq-c76="" type="radio" class="digi-ng-form-radiobutton__input" id="digi-ng-radiobutton-kp5uq" value="soktjobb" required="true" name="typ"><label _ngcontent-bqq-c76="" class="digi-ng-form-radiobutton__label" for="digi-ng-radiobutton-kp5uq">Genom annons</label><!----></div></digi-ng-form-radiobutton>
+
+/html/body/div[1]/div[2]/div[8]/div/div/main/div[3]/div/div/div[2]/div/div/div/div/div[3]/div/div/div[3]/arw-root/section/ng-component/arw-full-page-block[2]/div/section/div/div[1]/div[2]/div/arw-soktjobb/div/form/fieldset/digi-ng-form-radiobutton-group/div/digi-ng-form-radiobutton[1]/div/input
+
+
+//*[@id="soktjobb-typ"]/div/digi-ng-form-radiobutton[1]
+
+
+<input _ngcontent-bqq-c57="" data-digi-ng-component="" class="digi-ng-form-input-base" id="soktjobb-arbetsgivare" name="arbetsgivare" placeholder="Arbetsgivare" type="text" autocomplete="organization" maxlength="80" required="true">
