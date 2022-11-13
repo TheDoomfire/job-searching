@@ -46,12 +46,18 @@ def getReferens(link):
     r = session.get(link)
     r.html.render(sleep=1, keep_page=True, scrolldown=1) # Renders all javascript. scrolldown may be changed for large webpages
     annons = r.html.find("div", containing="Ange referens", first=True) # first=True means first time it finds it.
-    referens = annons.find("strong", first=True)
     annonsLink = r.html.find("a", containing="Ansök här", first=True)
+
+    try:
+        referens = annons.find("strong", first=True)
+        referens = referens.text
+    except:
+        referens = None
 
     for i in annonsLink.absolute_links: # Stupid I have to do this. Only one link inside.
         annonsLink = i
-    return annonsLink, referens # TODO: return referens if not none/null
+    returnList = [annonsLink, referens]
+    return returnList # TODO: return referens if not none/null
 
     theJob = {
     "link": annonsLink,
@@ -65,9 +71,14 @@ def webscrapeAnnons(link):
     r = session.get(link)
     r.html.render(sleep=1, keep_page=True, scrolldown=1) # Renders all javascript. scrolldown may be changed for large webpages
 
+# Without referens
+# print(getReferens("https://arbetsformedlingen.se/platsbanken/annonser/26773731"))
+
+# With referens
+# print(getReferens("https://arbetsformedlingen.se/platsbanken/annonser/26773558"))
 
 
-with open("job-to-apply.csv") as f:
+""" with open("job-to-apply.csv") as f:
     reader = csv.reader(f)
     count = 0
     next(reader) # Skips the header row
@@ -76,4 +87,4 @@ with open("job-to-apply.csv") as f:
         getReferens(row[4])
         if count > -1:
             break
-        count += 1
+        count += 1 """

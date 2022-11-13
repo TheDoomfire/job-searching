@@ -15,6 +15,13 @@ För att söka jobb i arbetsförmedlingens hemsida
 1. Opens up chromedriver (for selenium)
 1. And if I press a specific button then: auto-aktivitetsrapportera
 
+
+Auto-applying Idea
+1. Search for errors/404
+1. Search for any input fields. Except search. Need at least x amount of input fields.
+1. If not, search for button/link with 
+
+
 ## Install Eveything
 
 pip install -r requirements.txt

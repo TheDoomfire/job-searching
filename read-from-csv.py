@@ -1,6 +1,7 @@
 import csv
 import webbrowser
 
+# Open links
 
 with open("job-to-apply.csv") as f:
     reader = csv.reader(f)
@@ -8,9 +9,10 @@ with open("job-to-apply.csv") as f:
     next(reader) # Skips the header row
 
     for row in reader:
-        webbrowser.open_new(row[4])
-        print(row[4])
-        if count > 40:
+        link = row[5]
+        webbrowser.open_new(link)
+        #print(link)
+        if count > 10:
             break
         count += 1
 
