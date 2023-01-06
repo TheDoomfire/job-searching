@@ -6,3 +6,4 @@ BeautifulSoup4
 lxml
 selenium
 pandas
+pytest-playwright
