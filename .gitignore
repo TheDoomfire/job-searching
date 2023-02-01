@@ -1,8 +1,12 @@
 unpack/*
 output.json
 *.tar.gz
+*.pdf
 chromedriver.exe
+form_data.json
 node_modules/
 /test-results/
 /playwright-report/
 /playwright/.cache/
+/.venv/
+

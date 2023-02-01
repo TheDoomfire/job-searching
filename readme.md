@@ -28,6 +28,8 @@ pip install -r requirements.txt
 
 python -m pip install PACKAGENAME
 
+`pip install -r requirements.txt` - Installs it.
+
 
 ## Fixa dessa
 
