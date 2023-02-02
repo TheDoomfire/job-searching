@@ -19,7 +19,7 @@ theFile = r"unpack\jobtechdev\minio\arkiv\output.json" # File Location for the J
 
 
 # WORKS
-# zipDownloader(todayDate) # Downloads it.
+zipDownloader(todayDate) # Downloads it.
 print(readTheJson(theFile)) # Read from the json
 
 
