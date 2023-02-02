@@ -3,6 +3,8 @@
 För att söka jobb i arbetsförmedlingens hemsida
 
 
+fieldset
+
 ## TODO
 
 1. Read the json and take all needed info.
@@ -24,10 +26,19 @@ Auto-applying Idea
 
 ## Install Eveything
 
-pip install -r requirements.txt
-
 python -m pip install PACKAGENAME
 
+
+## Basics
+
+Create a venv `python -m venv .venv` //Name the folder whatever you want.
+
+Activate it - Win: `source .venv/Scripts/activate` <!--  Mac: `source .venv/bin/activate` -->
+
+
+### Requirements
+
+`pip freeze > requirements.txt` - Create the requirements.txt
 `pip install -r requirements.txt` - Installs it.
 
 
