@@ -4,13 +4,17 @@ import json
 import time
 
 
-the_url = "https://performiq.se/lediga-jobb/6998/"
+the_url = "https://trv.heroma.se/prod/trvpp01/externwebbv2/LedigaJobb/EW2PageJobPostingAdvert.aspx?jobpostingid=7277691825931409813"
 
 
 # https://www.lernia.se/jobb/lager-och-logistik/orebro-sommarjobba-som-materialhanterare-pa-epiroc-230735/
 # https://performiq.se/lediga-jobb/6998/
 # https://trv.heroma.se/prod/trvpp01/externwebbv2/LedigaJobb/EW2PageJobPostingAdvert.aspx?jobpostingid=7277691825931409813
 
+
+
+# Söktes detta jobb???
+# https://jobb.performiq.se/jobb/6998/ansok/
 
 """ buttons = soup.find_all('button')
 
@@ -88,7 +92,7 @@ def form_search(url):
     buttons = soup.find_all('button')
     links = soup.find_all('a')
     iframes = soup.find_all('iframe') # Since some webpages have everything inside of a iframe. Weird.
-    iframe_url = iframes[0]['src']
+    # Dosent work if it isnt any frames?
     print(url + "form")
 
     if forms:
@@ -110,10 +114,14 @@ def form_search(url):
                             print(payload) # Finds our all the data that needs to be sent.
 
 
-                    # Prepare the payload data
-                    # payload = {field['name']: field.get('value', '') for field in input_fields}
-                    # Submit the form
-                    #response = s.post(url + "form", data=form_text_data)
+                            # Prepare the payload data
+                            # payload = {field['name']: field.get('value', '') for field in input_fields}
+                            # Submit the form
+                            response = s.post(url, data=form_text_data)
+                            if response.status_code == 200:
+                                print("Form submitted successfully")
+                            else:
+                                print("Failed to submit form")
                     break
             for value in btn_text:
                 submit_input = soup.find('input', {'type': 'submit', 'value': value})
@@ -136,7 +144,10 @@ def form_search(url):
                 form_search(link_href)
                 break
     if iframes:
+        iframe_url = iframes[0]['src']
         print("Iframes :(")
+        for frames in iframes:
+            print(frames)
 
 
 form_search(the_url)
