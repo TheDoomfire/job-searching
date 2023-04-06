@@ -75,4 +75,4 @@ def readTheJson(jsonFile):
 
 
 
-print("Done.")
+print("Done looking for jobs.")
