@@ -8,6 +8,7 @@ from use_jobtechdev import readTheJson
 
 # BIG TODO
 # Make selenium auto applying the jobs.
+# OR make a payload work without selenium or typewright
 
 # Todo
 # Selenium arbetsformedlingen aktivitetsrapportera
