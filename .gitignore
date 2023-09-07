@@ -9,4 +9,5 @@ node_modules/
 /playwright-report/
 /playwright/.cache/
 /.venv/
-
+applied_jobs.csv
+job-to-apply.csv

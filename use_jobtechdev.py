@@ -11,11 +11,12 @@ todayDate = datetime.datetime.now().date() # Todays date
 
 # Edit here if you want. Write in lowercase.
 theFile = r"unpack\jobtechdev\minio\arkiv\output.json" # File Location for the Json file.
-# Jobs I want:
+
+# Jobs A want:
 jobsIwant = ["data", "programerare", "it-strateg", "systemutvecklare", "data engineer", "data analyst", "truckförare", "lagerarbetare", ]
 
-# Jobs Emma wants:
-# jobsIwant = ["marsvin", "virka", "hälsa"]
+# Jobs E wants:
+# jobsIwant = ["marsvin", "virka", "personlig", "boendestödjare", "vårdpersonal", "elevassistent"]
 
 whereIwantJob = "örebro"
 ignoreEmployers = ["dhl", "tranpenad"]

@@ -4,17 +4,8 @@ import json
 import time
 
 
-the_url = "https://trv.heroma.se/prod/trvpp01/externwebbv2/LedigaJobb/EW2PageJobPostingAdvert.aspx?jobpostingid=7277691825931409813"
+the_url = "https://jobb.nercia.se/jobb/909/ansokningsformular"
 
-
-# https://www.lernia.se/jobb/lager-och-logistik/orebro-sommarjobba-som-materialhanterare-pa-epiroc-230735/
-# https://performiq.se/lediga-jobb/6998/
-# https://trv.heroma.se/prod/trvpp01/externwebbv2/LedigaJobb/EW2PageJobPostingAdvert.aspx?jobpostingid=7277691825931409813
-
-
-
-# Söktes detta jobb???
-# https://jobb.performiq.se/jobb/6998/ansok/
 
 """ buttons = soup.find_all('button')
 
@@ -37,13 +28,17 @@ else:
 # Move to next url
 # <form
 
-
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246',
     'Accept-Language': 'en-GB,en;q=0.5',
-    'Referer': 'https://www.google.com', # Where we came from
+    'Referer': 'https://arbetsformedlingen.se/', # Where we came from
     'DNT': '1' # Do Not Track
 }
+
+def modify_url(url):
+    if url.startswith("//"):
+        url = "https:" + url
+    return url
 
 
 # Maybe make it compare to .lower()
@@ -85,7 +80,7 @@ submit_input = None
 def form_search(url):
     s = HTMLSession()
     r = s.get(url, headers=headers)
-    r.html.render(sleep=1)
+    r.html.render(sleep=2, keep_page=True, scrolldown=1)
     soup = BeautifulSoup(r.text, 'html.parser')
 
     forms = soup.find_all('form')
@@ -93,10 +88,11 @@ def form_search(url):
     links = soup.find_all('a')
     iframes = soup.find_all('iframe') # Since some webpages have everything inside of a iframe. Weird.
     # Dosent work if it isnt any frames?
-    print(url + "form")
+    print(url + "form") # Maybe stupid to have form.
 
     if forms:
         for form in forms:
+            print("Found a form.")
             inputs = form.find_all('input')
             if len(inputs) >= 4: # Because a job searching for is typically at least 4 forms. Maybe look for 2 upload forms.
                 inputs = form.find_all('input', {'type': 'file'})
@@ -111,7 +107,9 @@ def form_search(url):
                         if parent_form:
                             inputs = parent_form.find_all('input')
                             payload = {input['name']: input.get('value', '') for input in inputs}
+                            print("----THE PAYLOAD----")
                             print(payload) # Finds our all the data that needs to be sent.
+                            print("----END PAYLOAD----")
 
 
                             # Prepare the payload data
@@ -144,13 +142,18 @@ def form_search(url):
                 form_search(link_href)
                 break
     if iframes:
-        iframe_url = iframes[0]['src']
+        iframe_url = modify_url(iframes[0]['src']) # Incase it starts with // will change to https://
         print("Iframes :(")
+        print(iframe_url)
         for frames in iframes:
             print(frames)
 
+    #print(soup)
+
 
 form_search(the_url)
+
+print("It's done.")
 
 # {'firstName': '', 'surName': '', 'email': '', 'linkedInUrl': '', '1019': '', '2150': '', '2151': '', '2160': '', '2212': '', '2289': '', 'cv': '', 'other-document': '', 'consent': ''}
 
