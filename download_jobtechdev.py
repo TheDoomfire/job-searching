@@ -56,5 +56,3 @@ def zipDownloader(theDate):
 
 
 # zipDownloader(todayDate)
-
-print("Done downloading and unzipping.")

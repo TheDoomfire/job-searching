@@ -16,12 +16,12 @@ from use_jobtechdev import readTheJson
 
 
 todayDate = datetime.datetime.now().date() # Todays date
+# month = todayDate.month
 theFile = r"unpack\jobtechdev\minio\arkiv\output.json" # File Location for the Json file.
 
-
 # WORKS
-zipDownloader(todayDate) # Downloads it.
+#zipDownloader(todayDate) # Downloads it.
+#print("Done downloading and unzipping.")
 print(readTheJson(theFile)) # Read from the json
 
-
-print("Done! Happy run-script")
+print("It's donne.")

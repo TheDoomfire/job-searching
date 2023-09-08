@@ -8,6 +8,7 @@ from webscrape_af import getReferens
 
 
 todayDate = datetime.datetime.now().date() # Todays date
+month = todayDate.month
 
 # Edit here if you want. Write in lowercase.
 theFile = r"unpack\jobtechdev\minio\arkiv\output.json" # File Location for the Json file.
@@ -42,25 +43,27 @@ def readTheJson(jsonFile):
             jobValid = data[myNumber]["originalJobPosting"]["validThrough"] # when it expires
             jobDatePosted = data[myNumber]["originalJobPosting"]["datePosted"]
             firstTime = False
+            date_obj = datetime.datetime.strptime(jobDatePosted, "%Y-%m-%d").date()
 
             if jobLocation.casefold() == whereIwantJob.casefold(): # .casefold is like .lower but apperently better.
                 if any(work_title in JobOccupation.casefold() for work_title in jobsIwant):
                     if not any(work_title in hiringOrganizationName.casefold() for work_title in ignoreEmployers):
                         if str(todayDate) < str(jobValid): # Checks to see if I can still apply for it.
-                            if hiringOrganizationName not in allEmployers: # If not hiringOrganizationName in joblist
-                                tempList = getReferens(afLink)
-                                print(tempList)
-                                jobLink = tempList[0]
-                                referens = tempList[1]
-                                job = {"occupation": JobOccupation, 
-                                "organization": hiringOrganizationName, 
-                                "title": jobTitle,
-                                "af_link":afLink,
-                                "job_link": jobLink,
-                                "referens": referens,
-                                "datePosted": jobDatePosted}
-                                joblist.append(job)
-                                allEmployers.append(hiringOrganizationName)
+                            if date_obj.month < month: # TEST Checks for only last month.
+                                if hiringOrganizationName not in allEmployers: # If not hiringOrganizationName in joblist
+                                    tempList = getReferens(afLink)
+                                    print(tempList)
+                                    jobLink = tempList[0]
+                                    referens = tempList[1]
+                                    job = {"occupation": JobOccupation, 
+                                    "organization": hiringOrganizationName, 
+                                    "title": jobTitle,
+                                    "af_link":afLink,
+                                    "job_link": jobLink,
+                                    "referens": referens,
+                                    "datePosted": jobDatePosted}
+                                    joblist.append(job)
+                                    allEmployers.append(hiringOrganizationName)
                                     
                         # if hiringOrganizationName.casefold() in ignoreEmployers.casefold():
                         # any(work_title in JobOccupation.casefold() for work_title in jobsIwant.casefold())
@@ -72,8 +75,3 @@ def readTheJson(jsonFile):
         df.to_csv("job-to-apply.csv")
         print("Added to CSV")
     return (joblist)
-
-
-
-
-print("Done looking for jobs.")
