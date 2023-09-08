@@ -11,3 +11,4 @@ node_modules/
 /.venv/
 applied_jobs.csv
 job-to-apply.csv
+*.csv
