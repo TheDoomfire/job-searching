@@ -7,11 +7,12 @@ from use_jobtechdev import readTheJson
 # Run only this file.
 
 # BIG TODO
-# Make selenium auto applying the jobs.
-# OR make a payload work without selenium or typewright
+# Make playwright auto applying the jobs.
+# OR make a payload work without selenium or playwright
 
 # Todo
-# Selenium arbetsformedlingen aktivitetsrapportera
+# Playwright arbetsformedlingen aktivitetsrapportera
+# Temporarly from csv file.
 
 
 
@@ -19,9 +20,13 @@ todayDate = datetime.datetime.now().date() # Todays date
 # month = todayDate.month
 theFile = r"unpack\jobtechdev\minio\arkiv\output.json" # File Location for the Json file.
 
-# WORKS
-#zipDownloader(todayDate) # Downloads it.
-#print("Done downloading and unzipping.")
+
+print("--- Downloading Job Data ---")
+print("")
+zipDownloader(todayDate) # Downloads it.
+print("Done downloading and unzipping.")
+print("--- Sorting Job Data ---")
+print("")
 print(readTheJson(theFile)) # Read from the json
 
-print("It's donne.")
+print("It's done.")

@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import datetime
 from webscrape_af import getReferens
+from look_for_forms import form_search
 
 
 # ADDS ALL FROM JSON TO CSV
@@ -14,7 +15,7 @@ month = todayDate.month
 theFile = r"unpack\jobtechdev\minio\arkiv\output.json" # File Location for the Json file.
 
 # Jobs A want:
-jobsIwant = ["data", "programerare", "it-strateg", "systemutvecklare", "data engineer", "data analyst", "truckförare", "lagerarbetare", ]
+jobsIwant = ["data", "programerare", "it-strateg", "systemutvecklare", "data engineer", "data analyst", "truckförare", "lagerarbetare", "butik", "skola" ]
 
 # Jobs E wants:
 # jobsIwant = ["marsvin", "virka", "personlig", "boendestödjare", "vårdpersonal", "elevassistent"]
@@ -54,12 +55,14 @@ def readTheJson(jsonFile):
                                     tempList = getReferens(afLink)
                                     print(tempList)
                                     jobLink = tempList[0]
+                                    form_link = form_search(jobLink)
                                     referens = tempList[1]
                                     job = {"occupation": JobOccupation, 
                                     "organization": hiringOrganizationName, 
                                     "title": jobTitle,
-                                    "af_link":afLink,
+                                    "af_link": afLink,
                                     "job_link": jobLink,
+                                    "form_link": form_link,
                                     "referens": referens,
                                     "datePosted": jobDatePosted}
                                     joblist.append(job)
