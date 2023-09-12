@@ -36,6 +36,7 @@ else:
 # If found and sent, change its applied for somewhere.
 # Move to next url
 # <form
+# Some buttons are inputs!
 
 # some form_url is still dynamic. Need to fix so it will apply jobs inside of this.
 

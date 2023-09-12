@@ -15,7 +15,17 @@ month = todayDate.month
 theFile = r"unpack\jobtechdev\minio\arkiv\output.json" # File Location for the Json file.
 
 # Jobs A want:
-jobsIwant = ["data", "programerare", "it-strateg", "systemutvecklare", "data engineer", "data analyst", "truckförare", "lagerarbetare", "butik", "skola" ]
+jobsIwant = ["data", 
+            "programmerare",
+            "it-strateg",
+            "systemutvecklare",
+            "data engineer",
+            "data analyst",
+            "webb",
+            "sökmotoroptimerare",
+            "databas",
+            "truckförare",
+            "lagerarbetare"] #, "butik", "skola"
 
 # Jobs E wants:
 # jobsIwant = ["marsvin", "virka", "personlig", "boendestödjare", "vårdpersonal", "elevassistent"]

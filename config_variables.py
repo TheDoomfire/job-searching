@@ -21,7 +21,7 @@ payload_data = {
     "sex": "Man",
     "phone": "0728645238",
     "area_code": "+46",
-    "cv": "CV - Albin Mustafa.pdf",
+    "cv": "Albin Mustafa - CV.pdf",
     "letter": "Personligt Brev - Albin Mustafa.pdf",
     "LinkedIn": ""
 }
