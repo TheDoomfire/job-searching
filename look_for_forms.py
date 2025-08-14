@@ -78,7 +78,8 @@ form_text_data = {
 }
 
 
-with open('Albin Mustafa - CV.pdf', 'rb') as cv_file, open('Albin Mustafa - CV.pdf', 'rb') as letter_file:
+# with open('Albin Mustafa - CV.pdf', 'rb') as cv_file, open('Albin Mustafa - CV.pdf', 'rb') as letter_file:
+with open('CV - Emma Åberg.pdf', 'rb') as cv_file, open('CV - Emma Åberg.pdf', 'rb') as letter_file:
     form_files = {
         'cv': cv_file,
         'personal_letter': letter_file,
@@ -177,7 +178,7 @@ def form_search(url):
     #print(soup)
 
 
-print(form_search(test_url))
+# print(form_search(test_url))
 
 # {'firstName': '', 'surName': '', 'email': '', 'linkedInUrl': '', '1019': '', '2150': '', '2151': '', '2160': '', '2212': '', '2289': '', 'cv': '', 'other-document': '', 'consent': ''}
 

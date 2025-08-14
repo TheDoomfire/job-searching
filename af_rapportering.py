@@ -1,7 +1,8 @@
 import csv
 import time
 import datetime
-from playwright.sync_api import Playwright, sync_playwright, expect
+# from playwright.sync_api import Playwright, sync_playwright, expect
+from playwright.sync_api import  sync_playwright
 
 
 #the_file = "jobs-i-will-apply-for.csv"
@@ -30,8 +31,31 @@ def rapportering() -> None: # Can remove None when it returns something.
         page.get_by_role("link", name="Bank-id").click()
         page.get_by_role("button", name="Mobilt bank-id").click() # Mobilt bank-id 
 
+        # GETTING ERROR? try uncomment this and comment out the max_retries and its function.
         # Finding aktivitetsrapport
-        page.get_by_role("link", name="Aktivitetsrapportera").click()
+        # page.get_by_role("link", name="Aktivitetsrapportera").click()
+        # RETRY MECHANISM FOR THE ACTIVITY LINK
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                # Wait for link to be ready
+                link = page.get_by_role("link", name="Aktivitetsrapportera")
+                link.wait_for(state="visible", timeout=30000)
+                
+                # Scroll into view and click
+                link.scroll_into_view_if_needed()
+                link.click(timeout=30000)
+                break  # Exit loop if successful
+            except TimeoutError:
+                if attempt < max_retries - 1:
+                    print(f"Attempt {attempt+1} failed. Refreshing page...")
+                    page.reload(wait_until="networkidle")
+                    page.wait_for_timeout(3000)  # Short delay
+                else:
+                    raise  # Re-raise error on last attempt
+
+
+
         page.get_by_role("button", name="Till Min aktivitetsrapport").click()
         page.get_by_role("button", name="Lägg till aktiviteter").click()
 
@@ -80,7 +104,7 @@ def rapportering() -> None: # Can remove None when it returns something.
         #page.get_by_role("button", name="Till Min aktivitetsrapport").click()
         #page.locator("div").filter(has_text="Lägg till aktiviteterKontrollera och skicka in").get_by_role("button", name="Kontrollera och skicka in").scroll_into_view_if_needed()
         #page.locator("div").filter(has_text="Lägg till aktiviteterKontrollera och skicka in").get_by_role("button", name="Kontrollera och skicka in").click()
-        #page.get_by_role("button", name="Skicka in rapport").scroll_into_view_if_needed()
+        #page.get_by_role("button", name="Skicka in rapport").scroll_into_view_if_needed
         #page.get_by_role("button", name="Skicka in rapport").click()
 
 

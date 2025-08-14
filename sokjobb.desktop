@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Sokjobb
+Comment=Job Search Application
+Exec=sh -c "$HOME/Documents/Github/job-searching/run-sokjobb.sh"
+Icon=/home/emma/Documents/Github/job-searching/job.png
+Terminal=true
+Type=Application
